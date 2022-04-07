@@ -1,10 +1,13 @@
-import React, { Component } from "react";
 const HOC = (Wrapp, c) => {
-  return (
-    <div className={c}>
-      <Wrapp />
-    </div>
-  );
+  function innerFn() {
+    return (
+      <div className={c}>
+        <Wrapp />
+      </div>
+    );
+  }
+
+  return innerFn;
 };
 
 export default HOC;
